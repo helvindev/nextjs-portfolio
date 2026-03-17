@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111827;
+  color-scheme: light;
+}
+
+html.dark {
+  --bg-color: #111827;
+  --text-color: #f9fafb;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+/* Navbar dark mode styling */
+.navbar-bg {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(229, 231, 235, 0.5);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+html.dark .navbar-bg {
+  background-color: rgba(17, 24, 39, 0.9);
+  border-color: rgba(75, 85, 99, 0.5);
+}
+
+html.dark .navbar-bg h1 {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+html.dark .navbar-bg a {
+  color: #d1d5db;
+  transition: color 0.3s ease;
+}
+
+/* Skills section dark mode styling */
+#skills {
+  background-color: var(--bg-color);
+}
+
+html.dark #skills h2 {
+  color: var(--text-color);
+}
+
+html.dark .bg-gradient-to-r,
+html.dark .bg-gradient-to-l {
+  background: linear-gradient(to right, var(--bg-color), transparent);
+}
+
+html.dark .bg-gradient-to-l {
+  background: linear-gradient(to left, var(--bg-color), transparent);
+}
+
+/* Skills Marquee Animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  min-width: 200%;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
